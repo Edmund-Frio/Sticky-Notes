@@ -1,0 +1,107 @@
+* {
+  font-family: monospace, Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+:root {
+  --base03: #002b36; /* background color */
+  --base02: #073642; /* markup/text area color */
+  --base01: #586e75;
+  --base00: #657b83;
+  --base0: #839496;
+  --base1: #93a1a1;
+  --base2: #eee8d5;
+  --base3: #fdf6e3;
+  --cyan: #2aa198; /* font color */
+  --orange: #cb4b16; /* hover shadow */
+  --green: #859900; /* add button font color */
+  --blue: #268bd2; /* edit button font color */
+  --red: #dc322f; /* delete button font color */
+}
+
+body {
+  background-color: var(--base03);
+}
+
+#notes-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 4rem 4rem;
+  padding: 4rem;
+}
+
+.sticky-note {
+  display: grid;
+  grid-template-rows: auto 3rem;
+  height: 20rem;
+  border-radius: 1rem;
+  background-color: var(--base0);
+  padding: 0.6rem;
+  transition: box-shadow 0.2s ease-in-out;
+  gap: 0.5rem;
+}
+
+.sticky-note:hover {
+  box-shadow: 0 8px 20px var(--base00);
+}
+
+.sticky-note .markdown {
+  resize: none;
+  background-color: var(--base03);
+  color: var(--cyan);
+  font-size: 1.2rem;
+  border-radius: 1rem;
+  border: 2px solid var(--base02);
+  padding: 1em;
+}
+
+.markdown:focus {
+  outline: none;
+  border: 2px solid var(--base3);
+}
+
+.strip {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  padding: 0 0.8rem;
+  background-color: var(--base02);
+  border-radius: inherit;
+}
+
+.bookmark-btn {
+  color: var(--blue);
+}
+
+.delete-btn {
+  color: var(--red);
+}
+
+.bookmark-btn, .delete-btn {
+  font-size: 1.6rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.bookmark-btn:hover, .delete-btn:hover {
+  opacity: 65%;
+}
+
+.bookmark-btn:active, .delete-btn:active {
+  transform: scale(0.9);
+}
+
+#add-btn {
+  font-size: 1.6rem;
+  border-radius: 1rem;
+  background: #cecece1f;
+  color: var(--green);
+  border: none;
+}
+
+#add-btn:hover {
+  background: linear-gradient(145deg, #cecece18, #cecece54);
+  cursor: pointer;
+}
